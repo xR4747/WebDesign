@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<link rel="shortcut icon" href="#" />
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			.box-1{
+				width: 800px;
+				height: 400px;
+				margin: 50px auto 0;
+			}
+			#vd{
+				width: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box-1">
+			<video id="vd" autoplay controls>
+				<source src="img/a.mp4" type="video/mp4"></source>
+			</video>
+		</div>
+		<div class="btn">
+			<button id="btn-1">获取</button>
+		</div>
+		
+		<script type="text/javascript">
+			window.onload=function(){
+				var vid = document.getElementById("vd");
+				var btn1 = document.getElementById("btn-1");
+				
+				btn1.onclick=function(){
+					var srcc = vid.src;
+					console.log(srcc);
+					vid.src = "img/b.mp4";
+					console.log(srcc);
+				}
+				
+			}
+		</script>
+
+		<!--<video width="800" height="" autoplay controls>
+			<source src="img/music.mp3" type="video/mp4"></source>
+		</video>-->
+	</body>
+
+</html>

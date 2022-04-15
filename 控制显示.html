@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<link rel="shortcut icon" href="#" />
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			.box-1{
+				width: 800px;
+				height: 400px;
+				margin: 50px auto 0;
+			}
+			#vd{
+				width: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box-1">
+			<video id="vd" autoplay controls >
+				<source src="img/a.mp4" type="video/mp4"></source>
+			</video>
+		</div>
+		<div class="btn">
+			<button id="btn-1">控件显示</button>
+			<button id="btn-2">播放</button>
+		</div>
+		
+		<script type="text/javascript">
+			window.onload=function(){
+				var vid = document.getElementById("vd");
+				var btn1 = document.getElementById("btn-1");
+				var btn2 = document.getElementById("btn-2");
+				
+				btn1.onclick=function(){
+					var cts = vid.controls;
+//					alert(cts);
+					if(cts == false){
+						vid.controls = true;
+						console.log(cts)
+					}else{
+						vid.controls = false;
+						console.log(cts)
+					}
+				}
+				
+				btn2.onclick=function(){
+					var loop = vid.loop;
+					if(loop == false){
+						vid.loop = true;
+						console.log(loop)
+					}else{
+						vid.loop = false;
+						console.log(loop)
+					}
+				}
+				
+			}
+		</script>
+
+		<!--<video width="800" height="" autoplay controls>
+			<source src="img/music.mp3" type="video/mp4"></source>
+		</video>-->
+	</body>
+
+</html>

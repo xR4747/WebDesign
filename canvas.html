@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#canvas{
+				width: 800px;
+				height: 400px;
+				background: ghostwhite;
+				display: block;
+				margin: 20px auto;
+				border: pink 2px solid;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<canvas id="canvas" ></canvas>
+		
+		<script type="text/javascript">
+			
+			var can = document.getElementById("canvas");
+			var cv = canvas.getContext("2d");
+			cv.beginPath();
+			cv.lineWidth="1";
+			cv.strokeStyle="aqua";
+			cv.moveTo(0,75);
+			cv.lineTo(150,75);
+			cv.stroke();
+			
+			cv.beginPath();
+			cv.lineWidth="1";
+			cv.strokeStyle="darkturquoise";
+			cv.moveTo(50,0);
+			cv.lineTo(200,100);
+			cv.stroke();
+			
+			for (var i = 0; i < 10; i ++){
+			  cv.beginPath();
+			  cv.arc(50 + i*100,60,40,0,2*Math.PI*(i+1)/10);
+			  cv.closePath();
+			  cv.stroke();
+			  cv.fillStyle="#005588"
+			  cv.fill()
+			}
+		</script>
+		
+		
+	</body>
+</html>

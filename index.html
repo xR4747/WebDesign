@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<link rel="shortcut icon" href="#" />
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			.box-1{
+				width: 800px;
+				height: 400px;
+				margin: 50px auto 0;
+			}
+			#vd{
+				width: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box-1">
+			<video id="vd" autoplay controls>
+				<source src="img/a.mp4" type="video/mp4"></source>
+			</video>
+		</div>
+		<div class="btn">
+			<button id="btn-1">播放</button>
+			<button id="btn-2">暂停</button>
+			<button id="btn-3">重载</button>
+			<button id="btn-4">静音</button> 
+		</div>
+		
+		<script type="text/javascript">
+			window.onload=function(){
+				var vid = document.getElementById("vd");
+				var vplay = document.getElementById("btn-1");
+				var stop = document.getElementById("btn-2")
+				var loading = document.getElementById("btn-3")
+				var mtd = document.getElementById("btn-4")
+				
+				vplay.onclick=function(){
+					vid.play();           /* 播放*/
+				}
+				stop.onclick=function(){
+//					vid.pause();          /* 暂停*/
+					var pse = vid.paused;
+					console.log(pse);
+					vid.paused = false;
+					console.log(pse);
+					
+//					if(pse == false){
+//						vid.paused = true;
+//						console.log(pse);
+//					}else{
+//						vid.play()
+////                      vid.paused = false; 
+//                      console.log(pse);
+//					}
+
+				}
+				loading.onclick=function(){
+					vid.load();           /* 重载*/
+				}
+				
+				mtd.onclick=function(){
+					var mted = vid.muted;
+					console.log(mted)
+					if(mted == false){
+						vid.muted = true;
+					}else{
+						vid.muted = false;
+					}
+				}
+				
+			}
+		</script>
+
+		<!--<video width="800" height="" autoplay controls>
+			<source src="img/music.mp3" type="video/mp4"></source>
+		</video>-->
+	</body>
+
+</html>

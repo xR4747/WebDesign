@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<link rel="shortcut icon" href="#" />
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			.box {
+				width: 800px;
+				height: 400px;
+				margin: 50px auto 0;
+			}
+			
+			#vd {
+				width: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="box">
+
+			<video id="vd" controls autoplay muted>
+
+				<source src="img/a.mp4" type="video/mp4"></source>
+
+			</video>
+
+		</div>
+
+		<script type="text/javascript">
+			var vList = ["img/a.mp4", "img/b.mp4"]
+			var vLen = vList.length;
+			var curr = 0;
+			var vid = document.getElementById("vd");
+			
+			vid.onended= function(){
+				curr++; 
+				if(curr >= vLen) {
+					curr = 0;   //重新循环播放
+					}
+				var srcc = vList[curr];
+				vid.src = srcc;   //更改路径
+				vid.play()
+			}
+
+//			window.onload = function() {
+//				var vid = document.getElementById("vd");
+//
+//				vid.addEventListener('ended', function() {   //监听视频是否播放完毕
+//					play(vid)   //播放完毕进入此方法
+//				})
+//
+//				play = function(vid) {
+//					var srcc = vList[curr];
+//					vid.src = srcc;   //更改路径
+//					curr++;   //遍历数组
+//					if(curr >= vLen) {
+//						curr = 0;   //重新循环播放
+//					}
+//
+//				}
+//			}
+		</script>
+
+	</body>
+
+</html>
